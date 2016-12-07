@@ -21,6 +21,6 @@ reformat_vars <- function(vars_file) {
 	return(df)
 }
 
-redist_vars <- reformat_vars("data-raw/redist_vars.csv")
+immig_vars <- reformat_vars("data-raw/immigration_vars.csv")
 	
 	
