@@ -9,7 +9,7 @@ reformat_vars <- function(vars_file) {
 		mutate(revval = (value == max(value) & reverse == TRUE),
 					 minval = if_else(!revval, min(value), max(value)),
 					 maxval = if_else(!revval, max(value), min(value)),
-					 values = str_c("c(", minval, ", ", maxval, ")"),
+					 values = str_c("c(", minval, ":", maxval, ")"),
 					 dich = (minval == maxval)) %>% 
 		filter(value == max(value)) %>%
 		arrange(-dich) %>% 
@@ -21,6 +21,6 @@ reformat_vars <- function(vars_file) {
 	return(df)
 }
 
-immig_vars <- reformat_vars("data-raw/immigration_vars.csv")
+redist_vars <- reformat_vars("data-raw/old_redist_vars.csv")
 	
 	
